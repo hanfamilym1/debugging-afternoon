@@ -9,7 +9,7 @@ class StoreFront extends Component {
         this.props.getAllProducts();
     }
 
-    render() {
+    render(props) {
         console.log(this.props.products);
         let productDisplay = this.props.products.map((element, index) => {
             return (
@@ -31,9 +31,10 @@ class StoreFront extends Component {
 }
 
 function mapStateToProps(state) {
+    let {products, loading} = state
     return {
-        products: state.products,
-        loading: state.loading,
+        products,
+        loading
     }
 }
 

@@ -9,8 +9,9 @@ class StoreFront extends Component {
         this.props.getAllProducts();
     }
 
-    render() {
+    render(props) {
         console.log(this.props.products);
+        const {addToShoppingCart, getAllProducts} = this.props
         let productDisplay = this.props.products.map((element, index) => {
             return (
                 <div className="product-container" key={index}>
@@ -31,9 +32,10 @@ class StoreFront extends Component {
 }
 
 function mapStateToProps(state) {
+    let {products, loading} = state
     return {
-        products: state.products,
-        loading: state.loading,
+        products,
+        loading
     }
 }
 

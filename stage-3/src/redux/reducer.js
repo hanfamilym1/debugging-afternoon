@@ -9,7 +9,8 @@ const GET_ALL_PRODUCTS_FULFILLED = "GET_ALL_PRODUCTS_FULFILLED";
 
 let initialState = {
     products: [],
-    shoppingCart: []
+    shoppingCart: [],
+    // loading: false
 }
 
 // Reducer
@@ -29,16 +30,16 @@ export default function reducer(state=initialState, action) {
             newArray.splice(action.index, 1);
             return Object.assign({}, {shoppingCart: newArray});
             
-        defualt:
+        default:
             return state;
     }
 }
 
 // Action Creators
-export function addToShoppingCart(product) {
+export function addToShoppingCart(products) {
     return {
         type: ADD_TO_SHOPPING_CART,
-        payload: product
+        payload: products
     }
 }
 

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 class ShoppingCart extends Component {
 
-    render() {
+    render(props) {
         let shoppingCartDisplay = this.props.shoppingCart.map((element, index) => {
             return (
                 <div className="shopping-cart-product-container" key={index}>
